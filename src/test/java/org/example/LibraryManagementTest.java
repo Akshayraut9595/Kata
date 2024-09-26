@@ -9,7 +9,7 @@ class LibraryManagementTest {
     @Test
     void addBookTest(){
         LibraryManagement library = new LibraryManagement();
-        Book book = new Book("A1","Object-Oriented Analysis and Design with Applications","Grady Booch",2007);
+        Book book = new Book("A1","Object-Oriented Analysis and Design with Applications","Grady Booch",2007, 1);
         library.addBook(book);
         assertTrue(library.isBookAvailable("A1"));
     }
@@ -18,10 +18,13 @@ class LibraryManagementTest {
     @Test
     void borrowBookTest(){
         LibraryManagement library = new LibraryManagement();
-        Book book = new Book("A1","Object-Oriented Analysis and Design with Applications","Grady Booch",2007);
+        Book book = new Book("A1","Object-Oriented Analysis and Design with Applications","Grady Booch",2007, 2);
         library.addBook(book);
+        int required_copies = 2;
+        String result1 = library.borrowBook(book, required_copies);
+        assertEquals("Book borrow successfully", result1);
 
-        assertEquals("Book borrow successfully", library.borrowBook(book));
-        assertEquals("Book is not available", library.borrowBook(book));
+        String result2 = library.borrowBook(book, required_copies);
+        assertEquals("Book is not available",result2);
     }
 }
