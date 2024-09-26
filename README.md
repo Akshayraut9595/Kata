@@ -23,5 +23,5 @@ The Library Management System is a simple application that allows users to manag
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/library-management-system.git
+git clone [https://github.com/yourusername/library-management-system.git](https://github.com/Akshayraut9595/Kata/tree/master)
 cd library-management-system
