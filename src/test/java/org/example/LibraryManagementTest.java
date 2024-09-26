@@ -20,11 +20,12 @@ class LibraryManagementTest {
         LibraryManagement library = new LibraryManagement();
         Book book = new Book("A1","Object-Oriented Analysis and Design with Applications","Grady Booch",2007, 2);
         library.addBook(book);
+        User user = new User("123","Akshay Raut", "akshayraut@gmail.com");
         int required_copies = 2;
-        String result1 = library.borrowBook(book, required_copies);
+        String result1 = library.borrowBook(book, required_copies, user);
         assertEquals("Book borrow successfully", result1);
 
-        String result2 = library.borrowBook(book, required_copies);
+        String result2 = library.borrowBook(book, required_copies, user);
         assertEquals("Book is not available",result2);
     }
 }
