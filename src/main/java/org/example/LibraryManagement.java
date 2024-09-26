@@ -51,4 +51,12 @@ public class LibraryManagement {
         userDetails.put(userId, user_borrowed_books);
         return true;
     }
+
+    public ArrayList<String> showAvailableBooks(){
+        ArrayList<String> availableBooks = new ArrayList<>();
+        for(String isbn:books.keySet()) {
+            availableBooks.add(isbn);
+        }
+        return availableBooks;
+    }
 }

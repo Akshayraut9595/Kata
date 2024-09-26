@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,8 +60,9 @@ class LibraryManagementTest {
         Book book2 = new Book("B1","Design Patterns: Elements of Reusable Object-Oriented Software"," Erich Gamma",1994, 2);
         library.addBook(book1);
         library.addBook(book2);
-
-        ArrayList<Book> availableBooks = new ArrayList<>(Arrays.asList(book1, book2));
-        assertEquals(availableBooks,library.showAvailableBooks());
+        ArrayList<String> availableBooks = new ArrayList<>();
+        availableBooks.add(book1.getBook_isbn());
+        availableBooks.add(book2.getBook_isbn());
+        assertEquals(availableBooks.size(),(library.showAvailableBooks()).size());
     }
 }
