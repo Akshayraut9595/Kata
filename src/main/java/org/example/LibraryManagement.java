@@ -40,4 +40,15 @@ public class LibraryManagement {
 
         return "Book is not available";
     }
+
+    public boolean returnBook(Book book, int number_of_copies_returning, User user){
+        String book_isbn = book.getBook_isbn();
+        books.put(book_isbn, books.getOrDefault(book_isbn, 0)+number_of_copies_returning);
+
+        String userId = user.getUser_id();
+        HashMap<String, Integer> user_borrowed_books = userDetails.get(userId);
+        user_borrowed_books.put(book_isbn, user_borrowed_books.getOrDefault(book_isbn, 0)-number_of_copies_returning);
+        userDetails.put(userId, user_borrowed_books);
+        return true;
+    }
 }
