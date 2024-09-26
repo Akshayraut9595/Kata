@@ -19,6 +19,8 @@ class LibraryManagementTest {
     void borrowBookTest(){
         LibraryManagement library = new LibraryManagement();
         Book book = new Book("A1","Object-Oriented Analysis and Design with Applications","Grady Booch",2007);
+        library.addBook(book);
+
         assertEquals("Book borrow successfully", library.borrowBook(book));
         assertEquals("Book is not available", library.borrowBook(book));
     }
